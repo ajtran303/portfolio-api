@@ -2,7 +2,7 @@
 
 ## Summary
 
-A lightweight FastAPI backend serving project data stored as Markdown files. Features async GraphQL endpoints with Strawberry, TDD, and file-based storage—demonstrating modern Python backend practices for a personal portfolio.
+A lightweight FastAPI backend serving project data stored as Markdown files. Features async GraphQL endpoints with Strawberry, TDD, and file-based storage. Demonstrates modern Python backend practices for a personal portfolio.
 
 [View the code](https://github.com/ajtran303/portfolio-api/)
 
