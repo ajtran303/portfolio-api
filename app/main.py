@@ -1,12 +1,23 @@
+from app import config
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import markdown
 import strawberry
 from strawberry.fastapi import GraphQLRouter
 from typing import Optional
 
-from app import config
 
 app = FastAPI()
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @strawberry.type
 class Project:
