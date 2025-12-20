@@ -61,6 +61,7 @@ Example Variables:
 ```
 
 Example Response:
+
 {
   "data": {
     "project": {
@@ -82,7 +83,7 @@ query {
 }
 ```
 
-Example Response
+Example Response:
 
 ```
 {
