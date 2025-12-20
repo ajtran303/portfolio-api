@@ -27,11 +27,11 @@ A lightweight Learning Management System built as a full-stack Rails app with Ho
 
 ---
 
-## Demo
+## Demo -->
 
 - **Live Demo:** [Requires login](https://learnforge-lms.onrender.com)  
 <!-- - **Demo Video:** [Watch on YouTube]() *(TODO: Record demo)* -->
-
-
+<!--  -->
+<!-- --- -->
+<!--  -->
 <!-- ## Screenshots -->
-

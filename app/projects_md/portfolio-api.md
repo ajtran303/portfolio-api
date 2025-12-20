@@ -31,8 +31,78 @@ A lightweight FastAPI backend serving project data stored as Markdown files. Fea
 
 ## Demo
 
-- **Live Demo:** [https://aj-tran-dev-portfolio-api.onrender.com/graphql](https://aj-tran-dev-portfolio-api.onrender.com/graphql)
+- **Live Demo:** [GraphiQL Interface](https://aj-tran-dev-portfolio-api.onrender.com/graphql)
 
+### Example Queries
+
+1. Get a single project by slug
+
+```graphql
+query GetProject($slug: String!) {
+  project(slug: $slug) {
+    slug
+    content
+  }
+}
+```
+
+Example Variables:
+
+```json
+{
+  "slug": "learnforge-lms"
+}
+```
+
+```json
+{
+  "slug": "portfolio-api"
+}
+```
+
+Example Response:
+{
+  "data": {
+    "project": {
+      "slug": "portfolio-api",
+      "content": "<h1>Portfolio API</h1><p>Description here...</p>"
+    }
+  }
+}
+
+
+2. List all projects
+
+```graphql
+query {
+  allProjects {
+    slug
+    content
+  }
+}
+```
+
+Example Response
+
+```json
+{
+  "data": {
+    "allProjects": [
+      {
+        "slug": "learnforge-lms",
+        "content": "<h1>LearnForge LMS</h1><p>Project description...</p>"
+      },
+      {
+        "slug": "portfolio-api",
+        "content": "<h1>Portfolio API</h1><p>Project description...</p>"
+      }
+    ]
+  }
+}
+```
+
+<!-- - **Demo Video:** [Watch on YouTube]() *(TODO: Record demo)* -->
+<!--  -->
 <!-- --- -->
-
+<!--  -->
 <!-- ## Screenshots -->
