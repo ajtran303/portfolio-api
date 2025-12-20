@@ -33,6 +33,7 @@ A lightweight FastAPI backend serving project data stored as Markdown files. Fea
 
 - **Live Demo:** [GraphiQL Interface](https://aj-tran-dev-portfolio-api.onrender.com/graphql)
 
+<!--- 
 ### Example Queries
 
 #### Get a single project by slug
