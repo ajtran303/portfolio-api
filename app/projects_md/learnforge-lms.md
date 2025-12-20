@@ -4,6 +4,8 @@
 
 A lightweight Learning Management System built as a full-stack Rails app with Hotwire interactivity, TDD, and role-based access. Demonstrates clean architecture and dynamic UIs. Designed for instructors and learners, with role-based access and lesson progress tracking.
 
+[View the code](https://github.com/ajtran303/learnforge-lms/)
+
 ---
 
 ## Highlights
