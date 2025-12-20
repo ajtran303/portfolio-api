@@ -1,7 +1,6 @@
 import pytest
-from httpx import AsyncClient
+from httpx import AsyncClient, ASGITransport
 from pathlib import Path
-import markdown
 from app.main import app
 
 PROJECTS_DIR = Path(__file__).parent.parent / "app" / "projects_md"
@@ -25,7 +24,7 @@ async def test_get_existing_project():
 
     variables = {"slug": "test_project"}
 
-    async with AsyncClient(app=app, base_url="http://test") as client:
+    async with AsyncClient(transport=ASGITransport(app), base_url="http://test") as client:
         response = await client.post("/graphql", json={"query": query, "variables": variables})
 
     assert response.status_code == 200
@@ -35,3 +34,22 @@ async def test_get_existing_project():
     assert "<p>This is a test project.</p>" in data["content"]
 
     test_file.unlink()
+
+@pytest.mark.asyncio
+async def test_get_nonexistent_project():
+    query = """
+    query GetProject($slug: String!) {
+        project(slug: $slug) {
+          slug
+          content
+        }
+    }
+    """
+    variables = {"slug": "no_such_project"}
+
+    async with AsyncClient(transport=ASGITransport(app), base_url="http://test") as client:
+        response = await client.post("/graphql", json={"query": query,  "variables": variables})
+
+    assert response.status_code == 200
+    data = response.json()["data"]["project"]
+    assert data is None
