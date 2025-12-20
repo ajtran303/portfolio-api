@@ -13,7 +13,7 @@ React frontend for my developer portfolio, fetching Markdown-based projects from
 - **Hero Section:** Animated with smooth transitions and call-to-action button
 - **About Section:** Casual summary of skills and tech stack, enhanced with:
     - **Interactive Vanta.NET background** (gold lines + nodes)
-    - **Translucent “glass card”** overlay
+    - **Translucent "glass card"** overlay
     - **Gold-to-blue gradient wrapper** behind the card
     - Smooth fade-in animation on scroll  
 - **Projects Carousel:** Clickable carousel of projects that **scrolls to the top of the section** when navigating between projects  
@@ -35,4 +35,4 @@ React frontend for my developer portfolio, fetching Markdown-based projects from
 
 ## Demo
 
-- **Live Demo:** (You're here!) [AJ Tran Portfolio](https://ajtran-dev.onrender.com)
+- **Live Demo:** [AJ Tran Portfolio](https://ajtran-dev.onrender.com) (You're here!)
