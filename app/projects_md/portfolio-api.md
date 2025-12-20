@@ -22,7 +22,7 @@ A lightweight FastAPI backend serving project data stored as Markdown files. Fea
 
 - Python 3.9+
 - FastAPI & Strawberry GraphQL
-- httpx for async HTTP requests
+- `httpx` for async HTTP requests
 - Markdown for project content
 - Pytest & pytest-asyncio
 - Deployment-ready on Render
