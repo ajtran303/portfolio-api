@@ -5,37 +5,27 @@ from httpx import AsyncClient, ASGITransport
 from pathlib import Path
 from app.main import app
 
-PROJECTS_DIR = Path(__file__).parent.parent / "app" / "projects_md"
 
 @pytest.fixture
-def project_file() -> Generator[Callable[[str, str], Path], None, None]:
-    created_files = []
+def project_file(temp_projects_dir: Path) -> Generator[Callable[[str, str], Path], None, None]:
 
     def _create(filename: str, content: str):
-        PROJECTS_DIR.mkdir(exist_ok=True)
-        path = PROJECTS_DIR / filename
+        path = temp_projects_dir / filename
         path.write_text(content, encoding="utf-8")
-        created_files.append(path)
         return path
 
     yield _create
 
-    for path in created_files:
-        if path.exists():
-            path.unlink
 
 @pytest_asyncio.fixture
 async def client() -> AsyncGenerator[AsyncClient, None]:
-    async with AsyncClient(transport=ASGITransport(app), base_url="http://test") as ac:\
+    async with AsyncClient(transport=ASGITransport(app), base_url="http://test") as ac:
         yield ac
+
 
 @pytest.mark.asyncio
 async def test_get_existing_project(client: AsyncClient, project_file: Callable):
-    test_file = PROJECTS_DIR / "test_project.md"
-    test_content = "# Test Project\nThis is a test project."
-    PROJECTS_DIR.mkdir(exist_ok=True)
-    test_file.write_text(test_content, encoding="utf-8")
-
+    project_file("test_project.md", "# Test Project\nThis is a test project.")
     
     query = """
     query GetProject($slug: String!) {
@@ -56,7 +46,6 @@ async def test_get_existing_project(client: AsyncClient, project_file: Callable)
     assert "<h1>Test Project</h1>" in data["content"]
     assert "<p>This is a test project.</p>" in data["content"]
 
-    test_file.unlink()
 
 @pytest.mark.asyncio
 async def test_get_nonexistent_project(client: AsyncClient):
@@ -70,9 +59,54 @@ async def test_get_nonexistent_project(client: AsyncClient):
     """
     variables = {"slug": "no_such_project"}
 
-    async with AsyncClient(transport=ASGITransport(app), base_url="http://test") as client:
-        response = await client.post("/graphql", json={"query": query,  "variables": variables})
+    response = await client.post("/graphql", json={"query": query,  "variables": variables})
 
     assert response.status_code == 200
     data = response.json()["data"]["project"]
     assert data is None
+
+
+@pytest.mark.asyncio
+async def test_list_all_projects(client: AsyncClient, project_file):
+    project_file("project1.md", "# Project 1\nContent 1")
+    project_file("project2.md", "# Project 2\nContent 2")
+
+    query = """
+    query GetAllProjects {
+        allProjects {
+            slug
+            content
+        }
+    }
+    """
+
+    response = await client.post("/graphql", json={"query": query})
+    assert response.status_code == 200
+
+    projects = response.json()["data"]["allProjects"]
+    slugs = [project["slug"] for project in projects]
+    assert "project1" in slugs
+    assert "project2" in slugs
+
+    contents = [project["content"] for project in projects]
+    assert any("Project 1" in c for c in contents)
+    assert any("Project 2" in c for c in contents)
+
+
+@pytest.mark.asyncio
+async def test_list_all_projects_empty(client: AsyncClient, temp_projects_dir):
+    query = """
+    query GetAllProjects {
+        allProjects {
+            slug
+            content
+        }
+    }
+    """
+
+    response = await client.post("/graphql", json={"query": query})
+    assert response.status_code == 200
+
+    data = response.json()["data"]["allProjects"]
+    assert isinstance(data, list)
+    assert len(data) == 0
