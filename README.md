@@ -5,9 +5,11 @@ A personal GraphQL API for serving project descriptions from Markdown files.
 ## Features
 
 - FastAPI + Strawberry GraphQL
-- Project content sourced from Markdown files
+- No database required; projects are read directly from Markdown files.
+- Markdown content is automatically converted to HTML.
 - GraphQL IDE (GraphiQL) included for easy testing
 - Async support for high performance
+- Fully tested with `pytest` and `pytest-asyncio`.
 
 ## Setup
 
