@@ -35,7 +35,7 @@ A lightweight FastAPI backend serving project data stored as Markdown files. Fea
 
 ### Example Queries
 
-1. Get a single project by slug
+#### Get a single project by slug
 
 ```
 query GetProject($slug: String!) {
@@ -71,7 +71,7 @@ Example Response:
 }
 
 
-2. List all projects
+#### List all projects
 
 ```
 query {
