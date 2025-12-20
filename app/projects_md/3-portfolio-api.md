@@ -62,6 +62,7 @@ Example Variables:
 
 Example Response:
 
+```
 {
   "data": {
     "project": {
@@ -70,7 +71,7 @@ Example Response:
     }
   }
 }
-
+```
 
 #### List all projects
 
