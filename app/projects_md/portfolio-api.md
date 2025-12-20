@@ -37,7 +37,7 @@ A lightweight FastAPI backend serving project data stored as Markdown files. Fea
 
 1. Get a single project by slug
 
-```graphql
+```
 query GetProject($slug: String!) {
   project(slug: $slug) {
     slug
@@ -48,13 +48,13 @@ query GetProject($slug: String!) {
 
 Example Variables:
 
-```json
+```
 {
   "slug": "learnforge-lms"
 }
 ```
 
-```json
+```
 {
   "slug": "portfolio-api"
 }
@@ -65,7 +65,7 @@ Example Response:
   "data": {
     "project": {
       "slug": "portfolio-api",
-      "content": "<h1>Portfolio API</h1><p>Description here...</p>"
+      "content": `"<h1>Portfolio API</h1><p>Description here...</p>"`
     }
   }
 }
@@ -73,7 +73,7 @@ Example Response:
 
 2. List all projects
 
-```graphql
+```
 query {
   allProjects {
     slug
@@ -84,17 +84,17 @@ query {
 
 Example Response
 
-```json
+```
 {
   "data": {
     "allProjects": [
       {
         "slug": "learnforge-lms",
-        "content": "<h1>LearnForge LMS</h1><p>Project description...</p>"
+        "content": `"<h1>LearnForge LMS</h1><p>Project description...</p>"`
       },
       {
         "slug": "portfolio-api",
-        "content": "<h1>Portfolio API</h1><p>Project description...</p>"
+        "content": `"<h1>Portfolio API</h1><p>Project description...</p>"`
       }
     ]
   }
