@@ -21,8 +21,7 @@ React frontend for my developer portfolio, fetching Markdown-based projects from
     - Images are automatically removed from the markdown content and displayed in the carousel
     - Carousel is responsive and mobile-friendly, with navigation buttons and index counter
 - **Responsive Design:** Mobile-friendly with smooth transitions
-- **Scroll Animations:** About section fades in as you scroll
-- **React Hooks Used:** `useState`, `useRef`, and `useEffect` for animations, Vanta.NET initialization, and intersection observer functionality
+- **React Hooks Used:** `useState`, `useRef`, `useEffect`, `useMemo`, and `useLayoutEffect` for managing carousel state, safely manipulating and observing the DOM, parsing HTML content efficiently, and resetting the carousel index before the browser paints to prevent flicker
 - **Type-safe & Tested:** TypeScript types, Vitest, and Testing Library
 
 ---
