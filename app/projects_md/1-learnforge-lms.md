@@ -21,7 +21,7 @@ A Learning Management System built as a full-stack Ruby on Rails application. Le
     - Enroll in courses with one click
     - Track lesson completion and course progress with visual progress bars
     - Navigate lessons via previous/next buttons and sidebar
-- **Interactive UI:** Turbo-powered updates for lessons, lesson completion,and course progress without full-page reloads
+- **Interactive UI:** Turbo-powered updates for lessons, lesson completion, and course progress without full-page reloads
 - **Test-Driven Development:** RSpec & Capybara tests for: courses, lessons,and  enrollment, lesson completion and course progress, role-based access control, and authentication and user registration
 - **Responsive Design:** Mobile-friendly layout with smooth interactions
 
