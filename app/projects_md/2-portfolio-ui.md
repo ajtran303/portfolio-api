@@ -35,9 +35,9 @@ React frontend for my developer portfolio, fetching Markdown-based projects from
 
 ---
 
-## Demo
+## Live Demo
 
-- **Live Demo:** [AJ Tran Portfolio](https://ajtran-dev.onrender.com)
+[AJ Tran Portfolio](https://ajtran-dev.onrender.com)
 
 ---
 

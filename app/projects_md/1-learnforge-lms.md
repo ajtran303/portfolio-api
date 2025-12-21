@@ -39,7 +39,7 @@ A Learning Management System built as a full-stack Ruby on Rails application. Le
 
 ## Live Demo
 
-Live Demo: [LearnForge LMS](https://learnforge-lms.onrender.com/)
+[LearnForge LMS](https://learnforge-lms.onrender.com/)
 
 Login with any of the following users:
 
