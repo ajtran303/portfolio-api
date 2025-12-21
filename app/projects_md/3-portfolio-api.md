@@ -31,7 +31,9 @@ A lightweight **FastAPI backend** serving project data stored as Markdown files.
 
 ---
 
-- **Live Demo:** [GraphiQL Interface](https://aj-tran-dev-portfolio-api.onrender.com/graphql)
+## Live Demo
+
+[GraphiQL Interface](https://aj-tran-dev-portfolio-api.onrender.com/graphql)
 
 ---
 

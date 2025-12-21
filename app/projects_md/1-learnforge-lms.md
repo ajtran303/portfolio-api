@@ -12,9 +12,8 @@ A Learning Management System built as a full-stack Ruby on Rails application. Le
 
 - **Role-based Access & Authentication:** Email/password login using `bcrypt`, with **Learner** and **Instructor** roles enforcing proper authorization throughout the app
 - **Course & Lesson Management:**
-    - Instructors can create, edit, and delete courses
+    - Instructors can create/edit/delete courses and lessons
     - Draft/published workflow for courses
-    - Add, edit, and delete lessons
     - Inline lesson editing with Turbo frames
 - **Learning Experience for Learners:**
     - Browse published courses only
