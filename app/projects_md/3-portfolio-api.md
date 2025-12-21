@@ -2,7 +2,7 @@
 
 ## Summary
 
-A lightweight FastAPI backend serving project data stored as Markdown files. Features async GraphQL endpoints with Strawberry, TDD, and file-based storage. Demonstrates modern Python backend practices for a personal portfolio.
+A lightweight **FastAPI backend** serving project data stored as Markdown files. Provides **async GraphQL endpoints** with Strawberry, TDD-tested routes, and file-based storage. Demonstrates modern Python backend practices for a personal portfolio, including async operations, Markdown rendering, and lightweight architecture.
 
 [View the code](https://github.com/ajtran303/portfolio-api/)
 
@@ -10,26 +10,44 @@ A lightweight FastAPI backend serving project data stored as Markdown files. Fea
 
 ## Highlights
 
-- **GraphQL API:** Query projects by slug or list all projects
-- **Async endpoints:** FastAPI + httpx for asynchronous requests and testing
-- **Markdown-powered content:** Projects stored in Markdown and served as HTML
-- **Test-Driven Development:** Async tests using pytest and pytest-asyncio
-- **Database-free:** Portable and lightweight, no database required
+- **GraphQL API:** Query projects by slug or fetch all projects
+- **Async Endpoints:** FastAPI + httpx for asynchronous requests and testing
+- **Markdown-powered content:** Projects stored as Markdown, served as HTML
+- **Database-free:** File-based storage for a portable and lightweight solution
+- **Test-Driven Development:** Async tests using pytest and pytest-asyncio to: fetch existing projects by slug, list all projects, handle empty project directories, and async GraphQL API response validation
+- **CORS & Asset Handling:** Static file serving with dynamic ASSETS_BASE_URL
+- **Schema-driven:** Strawberry GraphQL types for strong typing and auto-generated IDE
 
 ---
 
 ## Tech Stack
 
-- Python 3.9+
+- Python 3.11+
 - FastAPI & Strawberry GraphQL
-- `httpx` for async HTTP requests
-- Markdown for project content
-- Pytest & pytest-asyncio
+- `httpx` for async HTTP requests and testing
+- Markdown for project content rendering
+- Pytest & pytest-asyncio for TDD
 - Deployment-ready on Render
 
 ---
 
-## Demo
+## Architecture
+
+**Backend**
+- FastAPI application with modular routers
+- Strawberry GraphQL for schema-driven endpoints
+- Markdown file parsing and HTML conversion
+- Static file serving for project assets
+
+**Testing**
+- Async test suite using pytest-asyncio and httpx ASGI transport
+- Tests include project retrieval by slug, listing all projects, and empty state handling
+
+**Middleware**
+- CORS enabled for cross-origin requests
+- StaticFiles serving project assets under `/assets`
+
+---
 
 - **Live Demo:** [GraphiQL Interface](https://aj-tran-dev-portfolio-api.onrender.com/graphql)
 
