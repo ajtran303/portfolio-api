@@ -37,8 +37,8 @@ A lightweight FastAPI backend serving project data stored as Markdown files. Fea
 
 ## Screenshots
 
-![Portfolio GraphQL API Get All Project Slugs Query](./assets/portfolio-api/get_all_slugs.png)
+![Portfolio GraphQL API Get All Project Slugs Query](/assets/portfolio-api/get_all_slugs.png)
 
-![Portfolio GraphQL API Get Project Content By Slug Query](./assets/portfolio-api/get_project_content.png)
+![Portfolio GraphQL API Get Project Content By Slug Query](/assets/portfolio-api/get_project_content.png)
 
-![Portfolio GraphQL API Get All Projects Query](./assets/portfolio-api/get_all_projects.png)
+![Portfolio GraphQL API Get All Projects Query](/assets/portfolio-api/get_all_projects.png)

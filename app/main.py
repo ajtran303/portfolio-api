@@ -1,13 +1,26 @@
 from app import config
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 import markdown
+from pathlib import Path
 import strawberry
 from strawberry.fastapi import GraphQLRouter
 from typing import Optional
 
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+ASSETS_DIR = BASE_DIR / "app" / "projects_md" / "assets"
+
+
 app = FastAPI()
+
+
+app.mount(
+    "/assets",
+    StaticFiles(directory=ASSETS_DIR),
+    name="assets",
+)
 
 
 app.add_middleware(

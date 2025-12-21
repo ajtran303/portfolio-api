@@ -36,8 +36,8 @@ A Learning Management System built as a full-stack Rails app with Hotwire intera
 
 ## Screenshots
 
-![LearnForge LMS Instructor Courses Dashboard](./assets/learnforge-lms/instructor_course_dash.png)
+![LearnForge LMS Instructor Courses Dashboard](/assets/learnforge-lms/instructor_course_dash.png)
 
-![LearnForge LMS Instructor Lessons Dashboard](./assets/learnforge-lms/instructor_lesson_dash.png)
+![LearnForge LMS Instructor Lessons Dashboard](/assets/learnforge-lms/instructor_lesson_dash.png)
 
-![LearnForgeLMS Student Lesson Viewer](./assets/learnforge-lms/student_lesson_viewer.png)
+![LearnForgeLMS Student Lesson Viewer](/assets/learnforge-lms/student_lesson_viewer.png)

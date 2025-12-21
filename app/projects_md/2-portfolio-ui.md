@@ -41,8 +41,8 @@ React frontend for my developer portfolio, fetching Markdown-based projects from
 
 ## Screenshots
 
-![Hero Page Mobile View](./assets/portfolio-ui/hero_page.png)
+![Hero Page Mobile View](/assets/portfolio-ui/hero_page.png)
 
-![About Page Mobile View](./assets/portfolio-ui/about_page.png)
+![About Page Mobile View](/assets/portfolio-ui/about_page.png)
 
-![Project Page Mobile View](./assets/portfolio-ui/project_page.png)
+![Project Page Mobile View](/assets/portfolio-ui/project_page.png)
