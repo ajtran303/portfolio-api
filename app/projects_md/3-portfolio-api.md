@@ -15,7 +15,7 @@ A lightweight **FastAPI backend** serving project data stored as Markdown files.
 - **Markdown-powered content:** Projects stored as Markdown, served as HTML
 - **Database-free:** File-based storage for a portable and lightweight solution
 - **Test-Driven Development:** Async tests using pytest and pytest-asyncio to: fetch existing projects by slug, list all projects, handle empty project directories, and async GraphQL API response validation
-- **CORS & Asset Handling:** Static file serving with dynamic ASSETS_BASE_URL
+- **CORS & Asset Handling:** CORS enabled for cross-origin requests and StaticFiles serving project assets under `/assets`
 - **Schema-driven:** Strawberry GraphQL types for strong typing and auto-generated IDE
 
 ---
@@ -28,24 +28,6 @@ A lightweight **FastAPI backend** serving project data stored as Markdown files.
 - Markdown for project content rendering
 - Pytest & pytest-asyncio for TDD
 - Deployment-ready on Render
-
----
-
-## Architecture
-
-**Backend**
-- FastAPI application with modular routers
-- Strawberry GraphQL for schema-driven endpoints
-- Markdown file parsing and HTML conversion
-- Static file serving for project assets
-
-**Testing**
-- Async test suite using pytest-asyncio and httpx ASGI transport
-- Tests include project retrieval by slug, listing all projects, and empty state handling
-
-**Middleware**
-- CORS enabled for cross-origin requests
-- StaticFiles serving project assets under `/assets`
 
 ---
 
