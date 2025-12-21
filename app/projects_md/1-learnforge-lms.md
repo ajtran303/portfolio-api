@@ -4,7 +4,7 @@
 
 A Learning Management System built as a full-stack Ruby on Rails application. LearnForge LMS supports instructors and learners with **role-based access**, **lesson progress tracking**, and **course management**. Demonstrates clean Rails architecture, modern Hotwire-driven interactivity, and professional full-stack development practices including **Test-Driven Development (TDD)**.
 
-[View the code](https://github.com/ajtran303/learnforge-lms/)
+[View the code on GitHub](https://github.com/ajtran303/learnforge-lms/)
 
 ---
 

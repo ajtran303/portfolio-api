@@ -4,7 +4,7 @@
 
 React frontend for my developer portfolio, fetching Markdown-based projects from a GraphQL API. Built async and type-safe with **TypeScript**, with tests written using **Vitest** and **Testing Library**. Features smooth UI/UX, scroll animations, an interactive projects carousel, and a **dynamic, visually rich interface** using Vanta.NET backgrounds and translucent card layouts.
 
-[View the code](https://github.com/ajtran303/portfolio-ui)
+[View the code on GitHub](https://github.com/ajtran303/portfolio-ui)
 
 ---
 
