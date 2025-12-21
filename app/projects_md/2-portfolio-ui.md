@@ -49,5 +49,3 @@ React frontend for my developer portfolio, fetching Markdown-based projects from
 ![About Page Mobile View](/assets/portfolio-ui/about_page.png)
 
 ![Project Page Mobile View](/assets/portfolio-ui/project_page.png)
-
-![Project Carousel with Inner Image Carousel](/assets/portfolio-ui/project_carousel.png)
