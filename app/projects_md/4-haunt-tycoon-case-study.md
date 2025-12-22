@@ -68,4 +68,4 @@ The result is a game where simulation behavior is provable rather than assumed, 
 
 ## Key Takeaway
 
-**Haunt Tycoon is not about shipping features quickly — it is about proving a system can be trusted before asking players to invest their time.**
+**Haunted House Tycoon is not about shipping features quickly — it is about proving a system can be trusted before asking players to invest their time.**
