@@ -6,7 +6,7 @@ Haunted House Tycoon is a management simulation designed with **system trustwort
 
 **Status**: Ongoing project focused on strengthening and validating core system guarantees.
 
-[View the code on GitHub (Work in progress)](https://github.com/ajtran303/haunted-house-tycoon/)
+[View the code on GitHub](https://github.com/ajtran303/haunted-house-tycoon/)
 
 [Track dev progress on Trello](https://trello.com/b/KlfRz1Fa/haunt-tycoon)
 
