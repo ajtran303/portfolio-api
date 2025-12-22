@@ -4,7 +4,10 @@
 
 Haunted House Tycoon is a management simulation designed with **system trustworthiness as a primary engineering constraint**. Rather than prioritizing early content or polish, the project focuses on deterministic state transitions, explicit lifecycle control, and failure reporting derived from real system state. All uncertainty arises from player decisions rather than hidden or uncontrolled simulation behavior.
 
+Status: Ongoing project focused on strengthening and validating core system guarantees.
+
 [View the code on GitHub (Work in progress)](https://github.com/ajtran303/haunted-house-tycoon/)
+
 [Track dev progress on Trello](https://trello.com/b/KlfRz1Fa/haunt-tycoon)
 
 ---
