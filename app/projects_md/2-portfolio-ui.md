@@ -2,7 +2,7 @@
 
 ## Summary
 
-React frontend for my developer portfolio, fetching Markdown-based projects from a GraphQL API. Built async and type-safe with **TypeScript**, with tests written using **Vitest** and **Testing Library**. Features smooth UI/UX, scroll animations, an interactive projects carousel, and a **dynamic, visually rich interface** using Vanta.NET backgrounds and translucent card layouts.
+React frontend for my developer portfolio, fetching Markdown-based projects served as HTML from a GraphQL API. Built async and type-safe with **TypeScript**, with tests written using **Vitest** and **Testing Library**. Features smooth UI/UX, scroll animations, an interactive projects carousel, and a **dynamic, visually rich interface** using Vanta.NET backgrounds and translucent card layouts.
 
 [View the code on GitHub](https://github.com/ajtran303/portfolio-ui)
 
@@ -14,11 +14,12 @@ React frontend for my developer portfolio, fetching Markdown-based projects from
 - **About Section:** Casual summary of skills and tech stack, enhanced with:
     - **Interactive Vanta.NET background** (gold lines + nodes)
     - **Translucent "glass card"** overlay
-    - **Gold-to-blue gradient wrapper** behind the card
+    - **Gradient wrapper** behind the card
+    - **Touch-responsive JS animation** with CSS gradient fallback for WebGL load errors
     - Smooth fade-in animation on scroll
 - **Projects Carousel:** Clickable carousel of projects that **scrolls to the top of the section** when navigating between projects
     - Each project includes an **inner image carousel** for project screenshots
-    - Images are automatically removed from the markdown content and displayed in the carousel
+    - Images are automatically removed from incoming markdown/html content and displayed in the carousel
     - Carousel is responsive and mobile-friendly, with navigation buttons and index counter
 - **Responsive Design:** Mobile-friendly with smooth transitions
 - **React Hooks Used:** `useState`, `useRef`, `useEffect`, `useMemo`, and `useLayoutEffect` for managing carousel state, safely manipulating and observing the DOM, parsing HTML content efficiently, and resetting the carousel index before the browser paints to prevent flicker
