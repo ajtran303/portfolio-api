@@ -31,24 +31,12 @@ Most simulation games hide complexity behind randomness. I wanted failure to fee
 
 ### Three-Layer Design
 
-```
-┌─────────────────────────────────────┐
-│  UI Layer (React + Phaser)          │
-│  Renders state, dispatches actions  │
-└─────────────────────────────────────┘
-                 │
-                 ▼
-┌─────────────────────────────────────┐
-│  Runtime Layer (Zustand)            │
-│  Single source of truth, tick loop  │
-└─────────────────────────────────────┘
-                 │
-                 ▼
-┌─────────────────────────────────────┐
-│  Core Layer (Pure Functions)        │
-│  No side effects, fully testable    │
-└─────────────────────────────────────┘
-```
+1. UI Layer (React + Phaser)
+   - Renders state, dispatches actions
+2. Runtime Layer (Zustand)
+   - Single source of truth, tick loop
+3. Core Layer (Pure Functions)
+   - No side effects, fully testable
 
 **Why this matters:**
 
@@ -66,9 +54,7 @@ The park uses a hub-and-spoke model:
 
 Visitors physically transition between grids through portals, creating natural choke points and flow management challenges.
 
-```
-type VisitorLocation = { type: 'midway' } | { type: 'attraction'; attractionId: string };
-```
+`type VisitorLocation = { type: 'midway' } | { type: 'attraction'; attractionId: string };`
 
 This separation enables:
 
@@ -99,25 +85,7 @@ No `Math.random()`. Visitors processed by ID order. Same seed, same run.
 
 ### Pure Function Architecture
 
-All core logic is implemented as pure functions:
-
-```
-// Emotion changes are pure transformations
-export const applyEmotionDelta = (v: Visitor, delta: EmotionDelta): Visitor => ({
-  ...v,
-  fear: clampEmotion('fear', v.fear + (delta.fear ?? 0)),
-  happiness: clampEmotion('happiness', v.happiness + (delta.happiness ?? 0)),
-});
-
-// Movement returns new state, never mutates
-export const moveVisitorsMultiGrid = (
-  visitors: Visitor[],
-  state: GameState,
-  tick: number,
-): Visitor[] => {
-  // ... returns new array, original untouched
-};
-```
+All core logic is implemented as pure functions.
 
 **Result:**
 
@@ -129,12 +97,9 @@ export const moveVisitorsMultiGrid = (
 
 When visitors can't move (congestion, blocked paths), they enter internal blocking states:
 
-```
-type BlockingState =
-  | 'queued-to-enter'   // Waiting at portal, attraction entry blocked
-  | 'queued-to-return'  // At attraction exit, midway return blocked
-  | 'trapped';          // No path to exit exists
-```
+- `queued-to-enter` - Waiting at portal, attraction entry blocked
+- `queued-to-return` - At attraction exit, midway return blocked
+- `trapped` - No path to exit exists
 
 These are _spatial_ states, not _intent_ states. A visitor can want to exit (`intent: 'exit'`) while being physically stuck (`blockingState: 'trapped'`).
 
@@ -158,10 +123,8 @@ Players must push visitors close to the edge without going over. This creates te
 
 When visitors die, it's diagnostic:
 
-| Death  | Meaning                                                 |
-| ------ | ------------------------------------------------------- |
-| Panic  | Too much fear - reduce scare rooms or add recovery      |
-| Misery | Flow problem - congestion, no amenities, stuck visitors |
+**Panic** Too much fear - reduce scare rooms or add recovery
+**Misery** Flow problem - congestion, no amenities, stuck visitors
 
 The game is cruel but never opaque. Players can always trace what went wrong.
 
@@ -181,42 +144,9 @@ This inverts the typical "hire more staff = better" pattern. Overstaffing is a t
 
 ### Shared Test Factories
 
-```
-// tests/helpers/factories.ts
-export const makeVisitor = (overrides?: Partial<Visitor>): Visitor => ({
-  id: 1,
-  position: { x: 0, y: 0 },
-  fear: 0,
-  happiness: 50,
-  // ... sensible defaults
-  ...overrides,
-});
-
-export const makeState = (overrides?: Partial<GameState>): GameState => ({
-  // ... complete valid state
-  ...overrides,
-});
-```
-
-Adding a new field to `Visitor` requires updating one factory, not hundreds of tests.
+Example: adding a new field to `Visitor` requires updating one factory, not hundreds of tests.
 
 ### Behavior-Driven Tests
-
-```
-describe('Visitor Blocking States', () => {
-  it('visitor enters queued-to-enter when attraction entry is occupied', () => {
-    // Setup: portal on midway, blocker at attraction entry
-    const state = makeState({ /* ... */ });
-    const visitor = makeVisitor({ position: portalPos });
-    const blocker = makeVisitor({ position: entryPos, location: attraction });
-
-    const moved = moveVisitorsMultiGrid([visitor, blocker], state, 100);
-
-    expect(moved[0].blockingState).toBe('queued-to-enter');
-    expect(moved[0].location.type).toBe('midway'); // Didn't teleport
-  });
-});
-```
 
 Tests describe behavior, not implementation details.
 
