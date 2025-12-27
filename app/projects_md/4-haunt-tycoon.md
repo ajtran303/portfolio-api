@@ -12,7 +12,7 @@ A deterministic park management game where players balance fear and profit. Buil
 
 - **Deterministic Simulation:** No hidden randomness. Seeded RNG where variation is needed. Reproducible runs, reliable tests.
 - **Three-Layer Architecture:** Core (pure functions), Runtime (Zustand store), UI (React + Phaser). Core has zero framework dependencies.
-- **Two-Grid System:** Midway hub with attraction sub-grids connected via portals. Different rules per zone—fear recovers on midway, not in attractions.
+- **Two-Grid System:** Midway hub with attraction sub-grids connected via portals. Different rules per zone: fear recovers on midway, not in attractions.
 - **Visitor Emotions:** Fear and happiness drive spending. High fear = high spending = risk of panic death.
 - **Blocking States:** Visitors enter spatial states (queued, trapped) creating visible congestion and cascading failures.
 - **Dev Mode:** Cheat panel, console commands (`__gameState()`, `__tick()`), debug toggles, 10x speed.
