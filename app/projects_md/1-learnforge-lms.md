@@ -23,7 +23,7 @@ A full-stack Learning Management System built with Ruby on Rails 8. Instructors 
 ## Tech Stack
 
 - **Backend:** Ruby on Rails 8.1, PostgreSQL
-- **Frontend:** Hotwire (Turbo + Stimulus), Bootstrap 5
+- **Frontend:** Hotwire (Turbo), Bootstrap 5
 - **Rich Text:** Action Text, Trix Editor, Active Storage
 - **Authentication:** bcrypt (has_secure_password)
 - **Testing:** RSpec, Capybara, FactoryBot, Shoulda Matchers
