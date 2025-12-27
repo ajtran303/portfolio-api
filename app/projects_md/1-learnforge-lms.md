@@ -2,7 +2,7 @@
 
 ## Summary
 
-A Learning Management System built as a full-stack Ruby on Rails application. LearnForge LMS supports instructors and learners with **role-based access**, **lesson progress tracking**, and **course management**. Demonstrates clean Rails architecture, modern Hotwire-driven interactivity, and professional full-stack development practices including **Test-Driven Development (TDD)**.
+A full-stack Learning Management System built with Ruby on Rails 8. Instructors create courses with rich text lessons and image attachments. Learners enroll, track progress, and navigate through content. Features Hotwire for real-time updates, Action Text for rich content editing, and comprehensive test coverage.
 
 [View the code on GitHub](https://github.com/ajtran303/learnforge-lms/)
 
@@ -10,29 +10,23 @@ A Learning Management System built as a full-stack Ruby on Rails application. Le
 
 ## Highlights
 
-- **Role-based Access & Authentication:** Email/password login using `bcrypt`, with **Learner** and **Instructor** roles enforcing proper authorization throughout the app
-- **Course & Lesson Management:**
-    - Instructors can create/edit/delete courses and lessons
-    - Draft/published workflow for courses
-    - Inline lesson editing with Turbo frames
-- **Learning Experience for Learners:**
-    - Browse published courses only
-    - Enroll in courses with one click
-    - Track lesson completion and course progress with visual progress bars
-    - Navigate lessons via previous/next buttons and sidebar
-- **Interactive UI:** Turbo-powered updates for lessons, lesson completion, and course progress without full-page reloads
-- **Test-Driven Development:** RSpec & Capybara tests for: courses, lessons, and  enrollment, lesson completion and course progress, role-based access control, and authentication and user registration
-- **Responsive Design:** Mobile-friendly layout with smooth interactions
+- **Authentication & Authorization:** Secure login with bcrypt and role-based access control for Learners and Instructors
+- **Rich Text Lesson Editor:** Trix-powered editor with formatting tools, code snippets, and image attachments
+- **Course Workflow:** Draft/published states, inline editing with Turbo Frames, and real-time updates
+- **Learner Progress Tracking:** Visual progress bars, lesson completion, resume functionality, and enrollment management
+- **Real-time UI:** Turbo Stream updates for enrollment, unenrollment, lesson completion, and flash messages
+- **Test-Driven Development:** RSpec system and model tests covering all major features
+- **Dark Mode Interface:** Custom styled UI with responsive mobile support
 
 ---
 
 ## Tech Stack
 
-- **Backend:** Ruby on Rails 8.1
-- **Database:** PostgreSQL
-- **Frontend:** Turbo, Bootstrap 5
-- **Authentication:** `has_secure_password` (bcrypt)
-- **Testing:** RSpec, Capybara, Shoulda Matchers
+- **Backend:** Ruby on Rails 8.1, PostgreSQL
+- **Frontend:** Hotwire (Turbo + Stimulus), Bootstrap 5
+- **Rich Text:** Action Text, Trix Editor, Active Storage
+- **Authentication:** bcrypt (has_secure_password)
+- **Testing:** RSpec, Capybara, FactoryBot, Shoulda Matchers
 - **Deployment:** Render
 
 ---
@@ -41,12 +35,10 @@ A Learning Management System built as a full-stack Ruby on Rails application. Le
 
 [LearnForge LMS](https://learnforge-lms.onrender.com/)
 
-Login with any of the following users:
-
 ```
-instructor1@example.com    password
-instructor2@example.com    password
-student@example.com        password
+instructor1@example.com / password (Instructor)
+instructor2@example.com / password (Instructor)
+student@example.com / password (Learner)
 ```
 
 ---

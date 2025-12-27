@@ -2,7 +2,7 @@
 
 ## Summary
 
-React frontend for my developer portfolio, fetching Markdown-based projects served as HTML from a GraphQL API. Built async and type-safe with **TypeScript**, with tests written using **Vitest** and **Testing Library**. Features smooth UI/UX, scroll animations, an interactive projects carousel, and a **dynamic, visually rich interface** using Vanta.NET backgrounds and translucent card layouts.
+React frontend for my developer portfolio. Fetches project HTML from a GraphQL API and parses it to extract images into a carousel gallery. Built with TypeScript, tested with Vitest and React Testing Library, featuring animated Vanta.NET backgrounds and responsive design.
 
 [View the code on GitHub](https://github.com/ajtran303/portfolio-ui)
 
@@ -10,29 +10,21 @@ React frontend for my developer portfolio, fetching Markdown-based projects serv
 
 ## Highlights
 
-- **Hero Section:** Animated with smooth transitions and call-to-action button
-- **About Section:** Casual summary of skills and tech stack, enhanced with:
-    - **Interactive Vanta.NET background** (gold lines + nodes)
-    - **Translucent "glass card"** overlay
-    - **Gradient wrapper** behind the card
-    - **Touch-responsive JS animation** with CSS gradient fallback for WebGL load errors
-    - Smooth fade-in animation on scroll
-- **Projects Carousel:** Clickable carousel of projects that **scrolls to the top of the section** when navigating between projects
-    - Each project includes an **inner image carousel** for project screenshots
-    - Images are automatically removed from incoming markdown/html content and displayed in the carousel
-    - Carousel is responsive and mobile-friendly, with navigation buttons and index counter
-- **Responsive Design:** Mobile-friendly with smooth transitions
-- **React Hooks Used:** `useState`, `useRef`, `useEffect`, `useMemo`, and `useLayoutEffect` for managing carousel state, safely manipulating and observing the DOM, parsing HTML content efficiently, and resetting the carousel index before the browser paints to prevent flicker
-- **Type-safe & Tested:** TypeScript types, Vitest, and Testing Library
+- **Animated Hero:** Smooth transitions with call-to-action navigation
+- **Interactive About Section:** Vanta.NET animated background with translucent glass card overlay and gradient fallback for WebGL errors
+- **Projects Carousel:** Navigate between projects with auto-scroll to section top, inner image carousel for screenshots, responsive controls
+- **React Patterns:** useState, useRef, useEffect, useMemo, useLayoutEffect for state management, DOM manipulation, HTML parsing, and flicker-free rendering
+- **Type-safe & Tested:** Full TypeScript coverage with Vitest and React Testing Library
 
 ---
 
 ## Tech Stack
 
-- React  
-- TypeScript  
-- CSS Modules  
-- Vanta.NET & Three.js for dynamic backgrounds  
+- React 19
+- TypeScript
+- Vite
+- Vanta.NET + Three.js for animated backgrounds
+- Vitest + React Testing Library
 
 ---
 
