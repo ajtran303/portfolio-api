@@ -34,8 +34,8 @@ A deterministic park management game where players balance fear and profit. Buil
 
 Alpha—core loop complete with two-grid system, visitor emotions, spending, amenities, warnings, and death tracking. Staff system, room demolition, and save/load coming next.
 
-<!-- --- -->
+---
 
-<!-- ## Screenshots -->
+## Screenshots
 
-<!-- ![Haunted House Tycoon Gameplay](/assets/haunt-tycoon/gameplay.png) -->
+![Haunted House Tycoon Gameplay](/assets/haunt-tycoon/gameplay.gif)
