@@ -32,7 +32,7 @@ A deterministic park management game where players balance fear and profit. Buil
 
 ## Status
 
-Alpha—core loop complete with two-grid system, visitor emotions, spending, amenities, warnings, and death tracking. Staff system, room demolition, and save/load coming next.
+Alpha complete, Beta in progress. Core loop complete with two-grid system, visitor emotions, spending, amenities, warnings, and death tracking. Staff system, room demolition, and save/load coming next.
 
 ---
 
